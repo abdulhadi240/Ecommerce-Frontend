@@ -165,7 +165,7 @@ const Details = ({ product, products }) => {
             </div>
             {/* right column end */}
           </div>
-          <div className="px-20">
+          <div className="sm:px-20 px-24">
             <RelatedProducts products={products} title={"You may also Like"} />
           </div>
         </Wrapper>

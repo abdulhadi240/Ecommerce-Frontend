@@ -91,7 +91,7 @@ const Category = ({ category, products, slug }) => {
     <>
 
     <Header/>
-<Image src={'/stadium1.jpg'} width={1000} height={1000} alt="stadium" className="absolute top-0 w-full h-[600px] overflow-hidden"/>
+<Image src={category.data[0].attributes.image.data.attributes.url} width={1000} height={1000} alt="stadium" className="absolute top-0 w-full h-[600px] overflow-hidden"/>
     <div className="w-full md:py-20 relative">
       {/* <div className="flex gap-2 items-center justify-center">
       <input
@@ -400,13 +400,13 @@ const Category = ({ category, products, slug }) => {
         </div>
         {/* products grid end */}
       </Wrapper>
-      <div className="mt-10 btn-group flex justify-center">
-        <button className="btn" disabled={pageindex === 1} onClick={PREV}>
+      <div className="mt-10  btn-group flex justify-center">
+        <button className="btn p-1 hover:bg-black hover:text-white" disabled={pageindex === 1} onClick={PREV}>
           « PREV
         </button>
-        <button className="btn">PAGE {pageindex}</button>
+        <button className="btn px-2"> {pageindex}</button>
         <button
-          className="btn"
+          className="btn p-1 hover:bg-black hover:text-white"
           disabled={pageindex === products?.meta?.pagination?.pageCount}
           onClick={NEXT}
         >
@@ -445,7 +445,7 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { slug } }) {
   const category = await fetchData(
-    `/api/categories?filters[slug][$eq]=${slug}`
+    `/api/categories?populate=*&filters[slug][$eq]=${slug}`
   );
   const products = await fetchData(
     `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&pagination[page]=1&pagination[pageSize]=${MaxResult}`

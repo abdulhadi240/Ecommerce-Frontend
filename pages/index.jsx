@@ -1,20 +1,14 @@
 import Footer from 'jsonfig.json/components/Footer';
 import Header from 'jsonfig.json/components/Header';
-import ImageScroll from 'jsonfig.json/components/ImageScroll'
-import Product from 'jsonfig.json/components/Product'
 import Wrapper from 'jsonfig.json/components/Wrapper';
 import { fetchData } from 'jsonfig.json/utils/api'
 import Image from 'next/image';
 import { TbDiscount2 } from 'react-icons/tb';
 import Home1 from 'jsonfig.json/src/pages/Home1'
-import CanvasModel from '../src/canvas/CanvasModel'
-import Customizer from '../src/pages/Customizer'
-import { MdLabelImportant } from 'react-icons/Md';
+// import { MdLabelImportant } from 'react-icons/Md';
 import Brands from 'jsonfig.json/components/Brands';
-import { TbBrandSlack } from 'react-icons/tb'
 import Category from 'jsonfig.json/components/Category';
 import Link from 'next/link';
-import SingleProduct from 'jsonfig.json/components/SingleProduct';
 import RelatedProducts from 'jsonfig.json/components/RelatedProduct';
 import Feedback from 'jsonfig.json/components/Feedback';
 import Cashback from 'jsonfig.json/components/Cashback';
@@ -24,7 +18,7 @@ import Cashback from 'jsonfig.json/components/Cashback';
 
 
 export default function Home({ products }) {
-  {console.log(products)}
+
 
 
 
@@ -33,7 +27,7 @@ export default function Home({ products }) {
       <Header />
       <main className='overflow-hidden'>
 
-       
+
         {/* LEFT SIDE */}
 
         <Wrapper>
@@ -67,7 +61,7 @@ export default function Home({ products }) {
             </div>
             <div className='flex'>
               <div className='mt-8 text-center hidden lg:block lg:text-justify lg:w-44 lg:mt-20 lg:-ml-10'>
-                <MdLabelImportant className='text-xl hidden lg:block' />
+                {/* <MdLabelImportant className='text-xl hidden lg:block' /> */}
                 <h1 className='font-semibold text-xl '>Sustainable Fashion</h1>
                 <p className='w-64 text-xs lg:text-sm'>A fashion company that specializes in creating customize clothing</p>
               </div>
@@ -91,37 +85,37 @@ export default function Home({ products }) {
 
           {/* Customize Section */}
           <div className="app transition-all ease-in">
-            <Home1/>
-      </div>
+            <Home1 />
+          </div>
 
 
-      {/* Categories */}
-      <div className='lg:-mt-28 sm:mt-10 flex justify-center text-3xl font-semibold '>
-        <div className='flex flex-col'>
-        <h1>Categories</h1>
-        <div className='h-[1px] w-full font-thin  bg-black/20'/>
-        </div>
-      </div>
-      <div className='flex justify-center mt-10 '>
-      <div className='grid grid-cols-1 text-center object-fill object-center sm:grid-cols-3 lg:grid-cols-5 gap-7'>
-        <Link href={'/category/football-1'}><Category title='Football' image='/i.jpg'/></Link>
-        <Link href={'/category/ba-1'}><Category title='BasketBall' image='/basketball.jpg'/></Link>
-        <Link href={'/category/r'}><Category title='Rugby' image='/rugby.jpg'/></Link>
-        <Link href={'/category/ba-1'}><Category title='BaseBall' image='/baseball.jpg'/></Link>
-        <Link href={'/'}><Category title='...More' image='/black.jpg'/></Link>
+          {/* Categories */}
+          <div className='lg:-mt-28 sm:mt-10 flex justify-center text-3xl font-semibold '>
+            <div className='flex flex-col'>
+              <h1>Categories</h1>
+              <div className='h-[1px] w-full font-thin  bg-black/20' />
+            </div>
+          </div>
+          <div className='flex justify-center mt-10 '>
+            <div className='grid grid-cols-1 text-center object-fill object-center sm:grid-cols-3 lg:grid-cols-5 gap-7'>
+              <Link href={'/category/football-1'}><Category title='Football' image='/i.jpg' /></Link>
+              <Link href={'/category/ba-1'}><Category title='BasketBall' image='/basketball.jpg' /></Link>
+              <Link href={'/category/r'}><Category title='Rugby' image='/rugby.jpg' /></Link>
+              <Link href={'/category/ba-1'}><Category title='BaseBall' image='/baseball.jpg' /></Link>
+              <Link href={'/'}><Category title='...More' image='/black.jpg' /></Link>
 
-       
-      </div>
-      </div>
 
-      {/* Popular Products */}
-<div className='px-6 sm:px-14 lg:px-20'>
-      <RelatedProducts products={products} title={'Popular Product'}/>
-      </div>
+            </div>
+          </div>
 
-      <Cashback/>
+          {/* Popular Products */}
+          <div className='px-16 sm:px-44 lg:px-20'>
+            <RelatedProducts products={products} title={'Popular Product'} />
+          </div>
 
-      <Feedback/>
+          <Cashback />
+
+          <Feedback />
 
         </Wrapper>
 
@@ -141,7 +135,7 @@ export default function Home({ products }) {
 
 export async function getServerSideProps() {
   const products = await fetchData("/api/products?populate=*&pagination[page]=1&pagination[pageSize]=6");
-  
+
 
   return {
     props: { products }
