@@ -3,9 +3,13 @@ import Header from 'jsonfig.json/components/Header';
 import Wrapper from 'jsonfig.json/components/Wrapper';
 import { fetchData } from 'jsonfig.json/utils/api'
 import Image from 'next/image';
-import { TbDiscount2 } from 'react-icons/tb';
 import Home1 from 'jsonfig.json/src/pages/Home1'
+<<<<<<< HEAD
 // import { MdLabelImportant } from 'react-icons/Md';
+=======
+import CanvasModel from '../src/canvas/CanvasModel'
+import Customizer from '../src/pages/Customizer'
+>>>>>>> d6a4b5614c5aa3aec5ec9f07be55bbb4ab6b75b5
 import Brands from 'jsonfig.json/components/Brands';
 import Category from 'jsonfig.json/components/Category';
 import Link from 'next/link';
@@ -54,14 +58,18 @@ export default function Home({ products }) {
                 </div>
                 <div className='text-3xl item-center w-64 mt-10 lg:mt-16 ml-16'>
                   <h1>Avail Massive <span className='bg-green-300 p-1 rounded-lg mt-2 font-medium'>Discount !</span></h1>
-                  <TbDiscount2 className='text-4xl mt-3 ml-6' />
+                  
                 </div>
 
               </div>
             </div>
             <div className='flex'>
               <div className='mt-8 text-center hidden lg:block lg:text-justify lg:w-44 lg:mt-20 lg:-ml-10'>
+<<<<<<< HEAD
                 {/* <MdLabelImportant className='text-xl hidden lg:block' /> */}
+=======
+               
+>>>>>>> d6a4b5614c5aa3aec5ec9f07be55bbb4ab6b75b5
                 <h1 className='font-semibold text-xl '>Sustainable Fashion</h1>
                 <p className='w-64 text-xs lg:text-sm'>A fashion company that specializes in creating customize clothing</p>
               </div>
