@@ -1,19 +1,56 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 const Cashback = () => {
   return (
-    <div className='overflow-hidden w-full sm:h-64 h-[350px] sm:px-24 lg:px-64 relative group bg-black/90 rounded-2xl mt-16'>
-        <div className='flex flex-col sm:flex-row justify-between sm:px-52sm: gap-4'>
-            <div className='flex flex-col mt-14 text-center sm:text-start'>
-            <h1 className='text-2xl font-semibold sm:tracking-wide text-white'>Get 5% Cash Back</h1>
-            <p className='sm:text-start text-center text-sm text-white'>on using Stripe</p>
-            <button className='rounded-3xl p-2  mt-4 bg-white text-black'>Shop Now !!</button>
-            </div>
-            <Image src={'/cards.png'} height={300} width={300} alt='card' className=' -mt-10 brightness-150 ml-10 sm:-mt-0 sm:brightness-150 sm:ml-0'/>
+    <section className="mx-auto max-w-7xl mt-32 px-2 py-10 md:px-0">
+      <div>
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <h2 className="text-3xl  font-bold text-center sm:text-start leading-tight text-black sm:text-4xl lg:text-5xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-4 max-w-xl text-center sm:text-start text-base leading-relaxed text-gray-600 lg:mx-auto">
+          Find the answers you need with our Frequently Asked Questions
+          </p>
         </div>
+        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 md:mt-16 md:grid-cols-2">
+          
+            <div>
+              <h2 className="text-xl text-center sm:text-start font-semibold text-black">How do I place an order on your eCommerce website?</h2>
+              <p className="mt-6 text-sm text-center sm:text-start  leading-6 tracking-wide text-gray-500">
+              To place an order on our eCommerce website, simply select the item you want to purchase and add it to your cart. Then, proceed to the checkout page and enter your shipping and payment information. Once you have reviewed your order, click the "Place Order" button to complete the transaction.
+              </p>
+            </div>
 
+            <div>
+              <h2 className="text-xl text-center sm:text-start font-semibold text-black">What payment options do you offer on your eCommerce website?</h2>
+              <p className="mt-6 text-sm text-center sm:text-start  leading-6 tracking-wide text-gray-500">
+              We offer a variety of payment options on our eCommerce website, including credit cards, debit cards, stripe.
+              </p>
+            </div>
 
-    </div>
+            <div>
+              <h2 className="text-xl text-center sm:text-start font-semibold text-black">What is your return policy for eCommerce orders?</h2>
+              <p className="mt-6 text-sm text-center sm:text-start  leading-6 tracking-wide text-gray-500">
+              We offer a 30-day return policy for most items purchased on our eCommerce website. If you are not satisfied with your purchase, you can return it for a full refund or exchange it for a different item.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-xl text-center sm:text-start font-semibold text-black">Do you offer free shipping on eCommerce orders?</h2>
+              <p className="mt-6 text-sm text-center sm:text-start  leading-6 tracking-wide text-gray-500">
+              We offer free shipping on orders over a certain amount. The specific amount varies depending on your location and the items you are purchasing.
+              </p>
+            </div>
+            
+          
+        </div>
+        <p className="mt-10 text-center text-gray-600">
+          Can&apos;t find what you&apos;re looking for?{' '}
+          <Link href={'/contact'} className="black font-semibold hover:underline">Contact us</Link>
+        </p>
+      </div>
+    </section>
   )
 }
 

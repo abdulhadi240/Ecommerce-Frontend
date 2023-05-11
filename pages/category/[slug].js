@@ -90,7 +90,7 @@ const Category = ({ category, products, slug }) => {
   return (
     <>
 
-    <Header/>
+    <Header textcolor={'white'} bg={'black'}/>
 <Image src={category.data[0].attributes.image.data.attributes.url} width={1000} height={1000} alt="stadium" className="absolute top-0 w-full h-[600px] overflow-hidden"/>
     <div className="w-full md:py-20 relative">
       {/* <div className="flex gap-2 items-center justify-center">
@@ -400,13 +400,13 @@ const Category = ({ category, products, slug }) => {
         </div>
         {/* products grid end */}
       </Wrapper>
-      <div className="mt-10  btn-group flex justify-center">
+      <div className="mt-10 text-xs btn-group flex justify-center">
         <button className="btn p-1 hover:bg-black hover:text-white" disabled={pageindex === 1} onClick={PREV}>
           « PREV
         </button>
         <button className="btn px-2"> {pageindex}</button>
         <button
-          className="btn p-1 hover:bg-black hover:text-white"
+          className="btn p-1 text-sm hover:bg-black hover:text-white"
           disabled={pageindex === products?.meta?.pagination?.pageCount}
           onClick={NEXT}
         >

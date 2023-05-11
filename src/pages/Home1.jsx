@@ -20,7 +20,7 @@ const Home = () => {
                     <Link href={'/Costumize'}><button className='mt-10 p-2 bg-black text-white '>Check Now </button></Link>
                 </div>
                 <div>
-                    <Image src={'/shirt.png'} height={900} width={900} alt='shirt' className='mt-16 h-auto' />
+                    <Image src={'/shirt.png'} height={900} width={900} priority={false} alt='shirt' className='mt-16 h-auto' />
                 </div>
             </div>
         </Wrapper>
