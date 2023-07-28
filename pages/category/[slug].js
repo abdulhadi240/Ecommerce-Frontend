@@ -91,7 +91,7 @@ const Category = ({ category, products, slug }) => {
     <>
 
     <Header textcolor={'white'} bg={'black'}/>
-<Image src={category.data[0].attributes.image.data.attributes.url} width={1000} height={1000} alt="stadium" className="absolute top-0 w-full h-[600px] overflow-hidden"/>
+{/* <Image src={category.data[0].attributes.image.data.attributes.url} width={1000} height={1000} alt="stadium" className="absolute top-0 w-full h-[600px] overflow-hidden"/> */}
     <div className="w-full md:py-20 relative">
       {/* <div className="flex gap-2 items-center justify-center">
       <input

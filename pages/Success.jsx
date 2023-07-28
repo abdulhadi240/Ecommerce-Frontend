@@ -1,6 +1,7 @@
 import React from "react";
 import Wrapper from "../components/Wrapper";
 import Link from "next/link";
+import Invoice from "jsonfig.json/components/Invoice";
 
 const Success = () => {
     return (
@@ -21,6 +22,8 @@ const Success = () => {
                     <Link href="/" className="font-bold mt-5">
                         Continue Shopping
                     </Link>
+
+                    <Link href={"/Invoice1"} className="font-bold mt-5">Invoice</Link>
                 </div>
             </Wrapper>
         </div>

@@ -12,7 +12,7 @@ import Link from 'next/link';
 import RelatedProducts from 'jsonfig.json/components/RelatedProduct';
 import Feedback from 'jsonfig.json/components/Feedback';
 import Cashback from 'jsonfig.json/components/Cashback';
-
+import { motion } from "framer-motion"
 
 
 
@@ -32,24 +32,28 @@ export default function Home({ products }) {
 
         <Wrapper>
           <div className='flex flex-col flex-grow sm:flex-row justify-between sm:gap-4 lg:gap-0'>
-            <div className=' ml-10  text-4xl mt-10 w-[270px] justify-center tracking-wide font-medium lg:text-5xl lg:w-[350px]'>
-              <h1 className=''><span className='w-16 h-10 pl-1 pr-1  bg-black text-white  rounded-full border-2 border-black'>Revamp</span> your Wardrobe with our fashion style</h1>
+            <motion.div initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: 1.5 }} className=' ml-10  text-4xl mt-10 w-[270px] justify-center tracking-wide font-medium lg:text-5xl lg:w-[350px]'>
+              <h1 className=''><motion.span className='w-16 h-10 pl-1 pr-1  bg-black text-white  rounded-full border-2 border-black'>Revamp</motion.span> your Wardrobe with our fashion style</h1>
               <p className='text-sm font-medium mt-6 sm:w-64 lg:w-[350px]'>It is for you to find a perfect card along with the detailed information you want and helps you use it easily </p>
               <button className='text-sm bg-black text-white p-2 rounded-md -ml-2 mt-4 w-full sm:w-32 sm:-ml-0 sm:mt-4 '>Shop Now</button>
-            </div>
+            </motion.div>
 
 
-            <div className='ml-3 w-80 sm:w-auto'>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 2 }}
+              className='ml-3 w-80 sm:w-auto '>
               <Image src={'/image.webp'} width={500} height={400} />
-            </div>
+            </motion.div>
           </div>
           <div className='flex flex-col sm:flex-row'>
             <div className='ml-6 sm:ml-12 sm:mt-6'>
               <div className='flex justify-start'>
                 <div className=' border-2 w-16 h-36  mt-6 border-black lg:w-32 lg:h-52 rounded-full relative'>
-                  <div className='lg:h-24 lg:w-24 h-14 w-14  rounded-full bg-black absolute top-5 -right-6 lg:top-8 lg:-right-10 text-white'>
-                    <h1 className='lg:text-2xl lg:ml-7 lg:mt-3 ml-4 text-sm mt-2'>30% OFF</h1>
-                  </div>
+                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='lg:h-24 lg:w-24 h-14 w-14  rounded-full bg-black absolute top-5 -right-6 lg:top-8 lg:-right-10 text-white'>
+                    <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }} className='lg:text-2xl lg:ml-7 lg:mt-3 ml-4 text-sm mt-2'>30% OFF</motion.h1>
+                  </motion.div>
 
                 </div>
                 <div className='text-3xl item-center w-64 mt-10 lg:mt-16 ml-16'>
@@ -135,8 +139,6 @@ export default function Home({ products }) {
 
 export async function getServerSideProps() {
   const products = await fetchData("/api/products?populate=*&pagination[page]=1&pagination[pageSize]=6");
-
-
   return {
     props: { products }
   }

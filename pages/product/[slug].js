@@ -65,11 +65,11 @@ const Details = ({ product, products }) => {
               </div>
 
               {/* PRODUCT SUBTITLE */}
-              <div className="text-lg font-semibold mb-5">{p.subtitile}</div>
+              <div className="text-lg font-light mb-5">{p.subtitile}</div>
 
               {/* PRODUCT PRICE */}
               <div className="flex items-center">
-                <p className="mr-2 text-lg font-semibold">MRP : RS {p.price}</p>
+                <p className="mr-2 text-lg font-semibold">MRP : $ {p.price}</p>
               </div>
 
               <div className="text-md font-medium text-black/[0.5]">
@@ -91,7 +91,7 @@ const Details = ({ product, products }) => {
                 {/* HEADING END */}
 
                 {/* SIZE START */}
-                <div id="sizesGrid" className="grid grid-cols-3 gap-2">
+                {/* <div id="sizesGrid" className="grid grid-cols-3 gap-2">
                   {p.size.data.map((item, i) => (
                     <div
                       key={i}
@@ -108,7 +108,7 @@ const Details = ({ product, products }) => {
                       {item.size}
                     </div>
                   ))}
-                </div>
+                </div> */}
 
                 {/* SHOW ERROR START */}
                 {showError && (
@@ -155,9 +155,10 @@ const Details = ({ product, products }) => {
               </button>
               {/* WHISHLIST BUTTON END */}
 
-              <div>
-                <div className="text-lg font-bold mb-5 markdown">
-                  Product Details
+              <div className="text-lg font-bold">
+              Product Details
+                <div className="text-sm font-medium tracking-wide mb-5 markdown">
+                  
                   <ReactMarkdown>{p.description}</ReactMarkdown>
                 </div>
                 <div className="markdown text-md mb-5"></div>

@@ -31,14 +31,15 @@ export const Search = ({ showSearch, setShowSearch }) => {
         <div className='flex gap-2 bg-gray-100 rounded-md w-80 sm:w-[700px] lg:w-[1600px]'>
           <div className='flex flex-col gap-10'>
             {data?.data.map((data) => {
+              let dur = 0.5;
               return (
                 <Link href={`/product/${data.attributes.slug}`} onClick={() => { setShowSearch(false) }}>
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    transition={{duration:dur++}}
                     key={data.id}
-                    className='flex'>
+                    className='flex hover:bg-gray-200 mt-3'>
                     {error && (<h1>Error while Fetching</h1>)}
                     {data ? (
                       <div key={data.id} className='flex gap-10'>
