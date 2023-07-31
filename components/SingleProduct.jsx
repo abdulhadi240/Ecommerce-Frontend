@@ -9,7 +9,7 @@ const SingleProduct = ({ data: { attributes: p, id } }) => {
       <div className=" object-center   w-auto flex flex-col   lg:p-6 bg-[#fdfdfd] border-[1px] border-black/20 rounded-md shadow-md group -ml-3  group cursor-pointer transi" onMouseEnter={() => setHover(true)} onMouseLeave={() => { setHover(false) }}>
 
         <div className="block relative h-72 rounded overflow-hidden  w-auto ">
-          <Image priority={true} width={250} height={250} src={p.thumbnail.data.attributes.url } alt={p.name} className='w-auto ml-2 sm:ml-6 lg:ml-0 object-center group-hover:scale-75 group-hover:-mt-2 group-hover:transition-transform  group-hover:delay-200' />   
+          {/* <Image priority={true} width={250} height={250} src={p.thumbnail.data.attributes.url } alt={p.name} className='w-auto ml-2 sm:ml-6 lg:ml-0 object-center group-hover:scale-75 group-hover:-mt-2 group-hover:transition-transform  group-hover:delay-200' />    */}
           <div>
             <Image src={'/logo.svg'} alt='image' width={30} height={30} className='absolute top-0 '></Image>
           </div>
